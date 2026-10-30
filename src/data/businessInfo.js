@@ -21,6 +21,20 @@ export const business = {
   hours: { time: '12 pm to 8 pm' },
 }
 
+// Booking happens on WhatsApp. Number in international format, digits only.
+const WHATSAPP_NUMBER = '19367581151'
+export const whatsapp = {
+  display: '+1 (936) 758-1151',
+  message:
+    "Hello Deluxe Tattoo! I'd like to book a tattoo appointment.\n\n" +
+    'Tattoo idea:\n' +
+    'Placement on body:\n' +
+    'Approximate size:\n' +
+    'Preferred days and times:\n\n' +
+    'Thank you!',
+}
+whatsapp.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsapp.message)}`
+
 export const mapsLink =
   'https://www.google.com/maps/search/?api=1&query=' +
   encodeURIComponent('Deluxe Tattoo, 1459 W Irving Park Rd, Chicago, IL 60613')

@@ -1,4 +1,4 @@
-import { business, mapsLink } from '../data/businessInfo.js'
+import { business, mapsLink, whatsapp } from '../data/businessInfo.js'
 
 export default function Footer() {
   const a = business.address
@@ -10,6 +10,7 @@ export default function Footer() {
           {a.street}, {a.city}, {a.region} {a.postalCode}<br />
           <a href={business.phoneHref}>{business.phoneDisplay}</a>
         </address>
+        <p><a href={whatsapp.href} target="_blank" rel="noopener noreferrer">Book on WhatsApp</a></p>
         <p><a href={mapsLink} target="_blank" rel="noopener noreferrer">Directions (opens Google Maps)</a></p>
         <p className="small">&copy; {new Date().getFullYear()} {business.name}</p>
       </div>

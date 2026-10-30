@@ -1,6 +1,7 @@
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import HomePage from './pages/HomePage.jsx'
+import FloatingWhatsApp from './components/FloatingWhatsApp.jsx'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <HomePage />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   )
 }

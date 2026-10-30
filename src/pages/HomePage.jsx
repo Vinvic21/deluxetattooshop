@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
-import { business, mapsLink, styles, images, gallery } from '../data/businessInfo.js'
+import { business, mapsLink, styles, images, gallery, whatsapp } from '../data/businessInfo.js'
+import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Lightbox from '../components/Lightbox.jsx'
 
@@ -25,9 +26,9 @@ export default function HomePage() {
               <span className="h1-a"><Letters text="DELUXE" /></span>
               <span className="h1-b"><Letters text="TATTOO" start={6} /></span>
             </h1>
-            <p className="lead">A tattoo shop on Irving Park Road in Chicago, open every day from noon to 8 pm.</p>
+            <p className="lead">A tattoo shop on Irving Park Road in Chicago, open every day from noon to 8 pm. Book your appointment on WhatsApp.</p>
             <div className="actions">
-              <a className="btn btn-dark" href={business.phoneHref}>Call {business.phoneDisplay}</a>
+              <WhatsAppButton />
               <a className="btn btn-line" href="#work">See the work</a>
             </div>
           </div>
@@ -63,8 +64,8 @@ export default function HomePage() {
               Deluxe Tattoo is a tattoo shop at {a.street} in {a.city}. The counter, the walls and the
               windows are covered in flash sheets and framed art, and the doors are open seven days a week.
             </p>
-            <p>To ask about a tattoo idea or an appointment, call the shop or stop by.</p>
-            <a className="btn btn-dark" href={business.phoneHref}>Call the shop</a>
+            <p>To book, message the shop on WhatsApp and tell them your idea.</p>
+            <WhatsAppButton />
           </Reveal>
           <Reveal className="about-photos" delay={150}>
             <img className="tilt-l" src={images.counter.src} alt={images.counter.alt} width={images.counter.w} height={images.counter.h} loading="lazy" />
@@ -105,6 +106,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="book" className="section section-tint">
+        <div className="wrap book-grid">
+          <Reveal>
+            <h2>Book on WhatsApp</h2>
+            <p>
+              Tap the button and WhatsApp opens with a message already written. Fill in the blanks
+              with your tattoo idea, where you want it, its size and the days that suit you, then send.
+            </p>
+            <WhatsAppButton large />
+            <p className="small-note">WhatsApp number: {whatsapp.display}</p>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="msg-card" aria-label="The message that will be pre-filled">
+              <p className="msg-label">Your message will start like this</p>
+              <pre className="msg-bubble">{whatsapp.message}</pre>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section id="visit" className="section section-dark">
         <div className="wrap visit-grid">
           <Reveal>
@@ -114,10 +135,10 @@ export default function HomePage() {
               {a.street}<br />
               {a.city}, {a.region} {a.postalCode}
             </address>
-            <p>Phone: <a href={business.phoneHref}>{business.phoneDisplay}</a></p>
+            <p>Shop phone: <a href={business.phoneHref}>{business.phoneDisplay}</a></p>
             {business.email && <p>Email: <a href={`mailto:${business.email}`}>{business.email}</a></p>}
             <div className="actions">
-              <a className="btn btn-sign" href={business.phoneHref}>Call the shop</a>
+              <WhatsAppButton />
               <a className="btn btn-ghost" href={mapsLink} target="_blank" rel="noopener noreferrer">Get directions (opens Google Maps)</a>
             </div>
           </Reveal>

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { business } from '../data/businessInfo.js'
+import WhatsAppButton from './WhatsAppButton.jsx'
 
 const links = [
   { href: '#about', label: 'About' },
   { href: '#styles', label: 'Styles' },
+  { href: '#book', label: 'Book' },
   { href: '#visit', label: 'Visit' },
 ]
 
@@ -29,7 +31,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a className="btn btn-dark" href={business.phoneHref}>Call {business.phoneDisplay}</a>
+          <WhatsAppButton compact />
         </nav>
       </div>
     </header>

@@ -1,0 +1,32 @@
+/* WhatsApp booking: buttons, floating button, message preview */
+:root{--wa:#25d366;--wa-dark:#128c7e}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--wa);color:var(--ink);border-color:var(--ink)}
+.btn-wa:hover{background:var(--ink);color:var(--wa);border-color:var(--ink)}
+.btn-wa-lg{font-size:1.4rem;padding:1rem 1.6rem;box-shadow:6px 6px 0 var(--ink)}
+.btn-wa-compact{padding:.55rem 1rem;font-size:1.05rem}
+.section-dark .btn-wa{border-color:var(--wa)}
+.section-dark .btn-wa:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.small-note{margin-top:1rem;font-size:.95rem}
+
+.book-grid{display:grid;gap:2.5rem;align-items:center}
+.msg-card{background:#e7dfc4;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:1.25rem}
+.msg-label{margin:0 0 .75rem;font-style:italic}
+.msg-bubble{margin:0;background:#dcf8c6;color:var(--ink);border:2px solid var(--ink);border-radius:0 14px 14px 14px;padding:1rem;font-family:var(--body);font-size:1rem;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+
+.wa-float{position:fixed;z-index:60;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));display:flex;align-items:center;gap:.6rem;background:var(--wa);color:var(--ink);border:3px solid var(--ink);border-radius:999px;padding:.8rem;text-decoration:none;box-shadow:4px 4px 0 var(--ink);font-family:var(--head);font-size:1.15rem}
+.wa-float:hover{background:var(--ink);color:var(--wa)}
+.wa-float-label{display:none}
+@media (min-width:48rem){
+  .wa-float{padding:.8rem 1.2rem .8rem .9rem}
+  .wa-float-label{display:inline}
+  .book-grid{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .wa-float{animation:wa-pop .6s .8s cubic-bezier(.2,1.2,.3,1) both}
+  .wa-float::after{content:"";position:absolute;inset:-3px;border-radius:inherit;border:3px solid var(--wa);animation:wa-ring 2.4s ease-out infinite;pointer-events:none}
+  @keyframes wa-pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+  @keyframes wa-ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.35)}}
+}
+@media (max-width:47.99rem){.site-footer{padding-bottom:5rem}}

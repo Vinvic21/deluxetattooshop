@@ -3,6 +3,9 @@
 Single-page site for Deluxe Tattoo, 1459 W Irving Park Rd, Chicago, IL 60613.
 All business facts live in `src/data/businessInfo.js`. The JSON-LD block in `index.html` must match them.
 
+## Booking
+Booking is via WhatsApp (+1 (936) 758-1151). The number and the pre-filled message are set once in `src/data/businessInfo.js` (`whatsapp`). Every Book button and the floating button use that link.
+
 ## Run
 ```
 npm install
@@ -28,7 +31,7 @@ npm run preview    # serve the production build locally
 - Permission to publish this as the shop's official site.
 - The "Styles of tattoo work" list (taken from photos, not from the shop).
 - Email, Instagram/Facebook, artist names, shop history: none supplied, so none shown.
-- How customers should book. The site only says to call or stop by.
+- That the WhatsApp number is the shop's and is monitored. It differs from the Maps listing phone, which stays shown as the shop phone.
 - Permission to show each photo, including the clients' tattoos (see IMAGE_MANIFEST.md).
 
 ## QA status
