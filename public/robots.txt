@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# After deploying, add this line with your real URL:
+# Sitemap: https://YOUR-PRODUCTION-URL/sitemap.xml
